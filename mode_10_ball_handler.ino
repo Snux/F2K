@@ -24,24 +24,21 @@
 //define global variables
 //----------------------------------------
 
-// Holds whether each of the trough position contains a ball or not (0 = no ball, 1 = has a ball)
-boolean left_trough;
-boolean middle_trough;
-boolean right_trough;
-
-
 
 //----------------------------------------
 //methods
 //----------------------------------------
 
+// As the trough switches can be a bit bouncy as balls run through, this routine will read the 
+// switch states directly for the 3 trough switches (51,52,53)and determine how many balls are stored
 byte balls_in_trough()
 {
-    left_trough = getSwitchState(5, 3);
-    middle_trough = getSwitchState(5, 2);
-    right_trough = getSwitchState(5, 1);
+    //left_trough = getSwitchState(5, 3);
+    //middle_trough = getSwitchState(5, 2);
+    //right_trough = getSwitchState(5, 1);
     //rial.print(F("Balls in trough :")); Serial.println(trough_ball_count, DEC);
-    return left_trough + middle_trough + right_trough;
+    
+    return getSwitchState(5, 3) + getSwitchState(5, 2) + getSwitchState(5, 1);
 }
 
 // This routine is called whenever any of the trough switches do something

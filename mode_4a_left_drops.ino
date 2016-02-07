@@ -179,8 +179,10 @@ void handle_left_drop(byte num)
     if (num <= next_left_drop[active_player_id])
     {
         if (next_left_drop[active_player_id] != num)
+        {
             sound_channel1.play(17);
-
+            update_score(active_player_id, 500);
+        }
             // If the target hit was the one flashing in sequence, give the score and check the next one
         else
         {
@@ -237,10 +239,7 @@ void handle_left_drop(byte num)
             }
             update_left_drop_lamps();
         }
-        else
-        {
-            update_score(active_player_id, 500);
-        }
+
         left_drop_target_reset();
     }
     Serial.print(F("Left Drops      : multiball stage is now "));

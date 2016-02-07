@@ -22,7 +22,7 @@
 //define includes
 //----------------------------------------
 #include "Keypad.h"
-
+#include "PinballStatus.h"
 //----------------------------------------
 //define global variables
 //----------------------------------------
@@ -69,3 +69,5 @@ static byte extra_balls = 0;
 static boolean blastoff_completed[max_players];
 
 
+//setup health status LED
+PinballStatus health_led = PinballStatus();

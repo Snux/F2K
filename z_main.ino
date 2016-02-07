@@ -112,6 +112,7 @@ void loop()
     //update lamps
     lamp_loop();
     lamp_effect_loop();
+    health_led.update();
 }
 
 //-----------------------
