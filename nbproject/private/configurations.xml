@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="Y:/Arduino-Pin/F2K15" name="0">
+      <in>F2K15.ino</in>
+      <in>_0_sound.ino</in>
+      <in>_1_driver.ino</in>
+      <in>_2_lamps.ino</in>
+      <in>_3_displays.ino</in>
+      <in>_6_EEPROM.ino</in>
+      <in>_7_devices_mechs.ino</in>
+      <in>_8_switch_matrix.ino</in>
+      <in>_9_utilities.ino</in>
+      <in>_mode_0_test.ino</in>
+      <in>mode_10_ball_handler.ino</in>
+      <in>mode_11_specials.ino</in>
+      <in>mode_1_attract.ino</in>
+      <in>mode_2_locks.ino</in>
+      <in>mode_3_jets.ino</in>
+      <in>mode_4a_left_drops.ino</in>
+      <in>mode_4b_right_drops.ino</in>
+      <in>mode_5_spinners.ino</in>
+      <in>mode_6_blastoff.ino</in>
+      <in>mode_8_bonus.ino</in>
+      <in>mode_91_tilt.ino</in>
+      <in>mode_92_match.ino</in>
+      <in>mode_9_game.ino</in>
+      <in>z_main.ino</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Y:/Arduino-Pin/F2K15/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir></rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

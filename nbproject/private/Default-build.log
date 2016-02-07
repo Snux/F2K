@@ -1,0 +1,9 @@
+
+Y:\Arduino-Pin\F2K15>c:
+
+C:\>cd c:\Pinmame 
+
+c:\pinmame>set path=c:\mingw2\bin\;c:\program files\mame-gnulike;C:\MinGW\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\MinGW\bin;C:\Python27;C:\P-ROC\cmake\bin;c:\programs\arduino\hardware\tools\avr\bin;c:\programs\arduino\hardware\tools\avr\utils\bin;c:\programs\msys\bin;C:\Program Files (x86)\Arduino;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Git\cmd;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\MinGW\bin;C:\Python27;C:\P-ROC\cmake\bin;c:\programs\arduino\hardware\tools\avr\bin;c:\programs\arduino\hardware\tools\avr\utils\bin;c:\programs\msys\bin;C:\Program Files (x86)\Arduino;C:\Program Files (x86)\Skype\Phone\;c:\Python27;c:\Python27\Scripts;c:\Python27;c:\Python27\Scripts 
+
+c:\pinmame>mingw32-make PROC=1 
+mingw32-make: Nothing to be done for `all'.
