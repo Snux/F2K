@@ -77,7 +77,7 @@ void trough_switch_handler()
 
     }
 }
-
+//Test
 // Parameter passed in determines what should be done
 // 0 = normal ball start
 // 1 = kick new ball after ball locked.
