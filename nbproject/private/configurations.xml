@@ -27,6 +27,7 @@
       <in>mode_9_game.ino</in>
       <in>z_main.ino</in>
     </df>
+    <itemPath>Y:/Arduino-Pin/F2K15/LICENSE.txt</itemPath>
   </logicalFolder>
   <projectmakefile>Y:/Arduino-Pin/F2K15/Makefile</projectmakefile>
   <confs>

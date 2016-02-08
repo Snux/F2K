@@ -164,11 +164,11 @@ void switchEvent(KeypadEvent key)
       Serial.print(F("State:")); Serial.println(switch_state);
      */
 
-    // If the ball search is active, then we only want to respond to the top right kicker switch
+    // If the ball search is active, then we only want to respond to the top kicker switches
     // and the trough switches; everything else can be ignored
     if (ball_search)
     {
-        if (!(key == 28 || key == 51 || key == 52 || key == 53))
+        if (!(key == 27 || key == 28 || key == 51 || key == 52 || key == 53))
             key = 0; // Key 0 won't get processed
     }
     // If the switch test routine is active, instead of processing the switch call, just display
