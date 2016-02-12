@@ -59,7 +59,7 @@ void start_game()
             reset_lamp_effects();
             //clear displays
             reset_displays();
-
+            sound_channel1.play(342);  //Player 1 stand by
             //set the ball save reference
             //ball_save_reference_timer_store = millis(); - remove?
         }
@@ -151,6 +151,18 @@ void start_ball()
         ball_num[active_player_id] += 1;
     }
 
+    switch (active_player_id) {
+                case 0: sound_channel1.play(342);  //Player one stand by
+                    break; //One
+                case 1: sound_channel1.play(343);
+                    break; //Two
+                case 2: sound_channel1.play(344);
+                    break; //Three
+                case 3: sound_channel1.play(345);
+                    break; //Four
+                
+            }
+    
     Serial.print(F("Ball Start  1   : Ball number is "));
     Serial.println(ball_num[active_player_id], DEC);
     Serial.print(F("Ball Start  1   : Balls per game is "));

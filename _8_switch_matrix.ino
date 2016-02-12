@@ -308,7 +308,7 @@ void switchEvent(KeypadEvent key)
                 sw_spot_blast.read(switch_state);
                 return;
             case 57:
-                sw_ball_launch.readHold(switch_state);
+                sw_ball_launch.read(switch_state);
                 return;
             case 58:
                 sw_release_rocket.read(switch_state);

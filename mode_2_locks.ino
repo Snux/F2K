@@ -109,7 +109,7 @@ void left_kicker()
         {
             if (balls_in_walker > 0)
             {
-                walker_coil.pulse(240);
+                walker_coil.pulse_delay(240,500,empty_routine);
             }
             else
             {
@@ -133,7 +133,7 @@ void right_kicker()
         update_score(active_player_id, 10000);
     }
     // Fire the kicker out and then set the callback to check it really left :)
-    right_top_kicker_coil.pulse_delay(50, 0, right_kicker_callback);
+    right_top_kicker_coil.pulse_delay(100, 0, right_kicker_callback);
 
 }
 
@@ -143,7 +143,7 @@ void right_kicker()
 void right_kicker_callback()
 {
     if (getSwitchState(2, 8) != 0)
-        right_top_kicker_coil.pulse_delay(50, 250, right_kicker_callback);
+        right_top_kicker_coil.pulse_delay(100, 250, right_kicker_callback);
 
 }
 
@@ -212,10 +212,14 @@ void ball_launch()
     }
     // Now we'll activate the walker mechanism.  If there were 3 balls in there, the bottom one 
     // should drop out and that will be picked up elsewhere
-    walker_coil.pulse(240);
+    walker_coil.pulse_delay(240,500,empty_routine);
 
 }
 
+void empty_routine()
+{
+
+}
 // TO-DO - work out what to do with this switch :)
 
 void release_rocket()
