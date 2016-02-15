@@ -59,6 +59,7 @@ void left_spinner()
     {
         update_score(active_player_id, 200);
     }
+    sound_channel1.play(8);
 }
 
 // Light the correct lamps related to spinner values

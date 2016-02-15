@@ -59,9 +59,10 @@ void start_game()
             reset_lamp_effects();
             //clear displays
             reset_displays();
-            sound_channel1.play(342);  //Player 1 stand by
+            sound_channel1.play(338);  //Prepare for mission
             //set the ball save reference
             //ball_save_reference_timer_store = millis(); - remove?
+            trough_switch_handler();  // Initial call to set trough counts.
         }
 
         //set flag
@@ -150,7 +151,8 @@ void start_ball()
     {
         ball_num[active_player_id] += 1;
     }
-
+    sound_channel1.play(338); // Prepare for mission
+/*
     switch (active_player_id) {
                 case 0: sound_channel1.play(342);  //Player one stand by
                     break; //One
@@ -162,7 +164,7 @@ void start_ball()
                     break; //Four
                 
             }
-    
+  */  
     Serial.print(F("Ball Start  1   : Ball number is "));
     Serial.println(ball_num[active_player_id], DEC);
     Serial.print(F("Ball Start  1   : Balls per game is "));

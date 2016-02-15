@@ -51,11 +51,13 @@ byte balls_in_trough()
 
 void trough_switch_handler()
 {
+    static byte previous_ball_count = 0;
+    
     trough_ball_count = balls_in_trough();
-    Serial.print(F("Outhole process : Balls in trough is currently "));
-    Serial.println(trough_ball_count, DEC);
+    Serial.print(F("Outhole process : Balls in trough is currently "));Serial.println(trough_ball_count, DEC);
+    Serial.print(F("                : Balls in trough was "));Serial.println(previous_ball_count, DEC);
 
-
+    
 
     // We only want to do something here if the game is actually in progress, otherwise we'll react to the initial read
     // of switch states at power on.
@@ -63,22 +65,32 @@ void trough_switch_handler()
     if (game_started)
     {
 
-        // If the number of balls in the trough and the number locked is the number in the game, then 
-        // then there are no balls in play so call the trough handler with ball drain
-        if (trough_ball_count + balls_in_walker == balls_in_game)
+        // We really only want to do something if we've got more balls in the trough now than we had before
+        // otherwise we're either here because a ball got kicked out (who cares) or we're still settling down.
+        
+        if (trough_ball_count > previous_ball_count)
         {
-            Serial.println(F("Outhole process : Last ball drained"));
-            trough_mech_handler(2); // 2 is ball drain
-        }
-            // If a ball left the playfield, and now only 1 is in play, see if multiball needs to end
-        else if (trough_ball_count + balls_in_walker == balls_in_game - 1)
-        {
-            Serial.println(F("Outhole process : Multiball check"));
-            check_multiball_end();
+            // If the number of balls in the trough and the number locked is the number in the game, then 
+            // then there are no balls in play so call the trough handler with ball drain
+            if (trough_ball_count + balls_in_walker == balls_in_game)
+            {
+                Serial.println(F("Outhole process : Last ball drained"));
+                trough_mech_handler(2); // 2 is ball drain
+            }
+                // If a ball left the playfield, and now only 1 is in play, see if multiball needs to end
+            else if (trough_ball_count + balls_in_walker == balls_in_game - 1)
+            {
+                Serial.println(F("Outhole process : Multiball check"));
+                check_multiball_end();
 
+            }
         }
 
     }
+    else
+        Serial.println(F("Outhole process : No game in progress, ignoring"));
+    
+    previous_ball_count = trough_ball_count;
 }
 //Test
 // Parameter passed in determines what should be done

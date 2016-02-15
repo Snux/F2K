@@ -73,6 +73,16 @@ static boolean left_spinner_lit[max_players];
 static boolean lite_special_lit[max_players];
 static byte extra_balls = 0;
 static boolean blastoff_completed[max_players];
+// This variable controls how far we are progressed toward multiball
+// 0 = no progress (initial state)
+// 1 = Apollo 1 lit - by shooting a ball into the lock
+// 2 = Apollo 1 and 2 lit - by shooting another into the lock
+// 3 = Lite all systems go - Apollo 1 and 2 lit, and blastoff completed
+// 4 = Multiball ready - lite all systems go complete and 54321 targets completed.
+// 5 = Multiball launch in progress!!
+// 6 = Multiball running
+static byte multiball_stage[max_players];
+static byte stage_lit[max_players];
 
 
 //setup health status LED

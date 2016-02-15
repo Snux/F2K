@@ -192,7 +192,8 @@ void handle_left_drop(byte num)
             // If the target hit was the one flashing in sequence, give the score and check the next one
         else
         {
-            switch (num) {
+            // Only speak the numbers if we are actually in the countdown phase of multiball prep
+            if (multiball_stage[active_player_id] == 3) switch (num) {
                 case 1: sound_channel1.play(324);
                     break; //One
                 case 2: sound_channel1.play(301);

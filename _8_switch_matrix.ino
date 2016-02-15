@@ -115,27 +115,12 @@ PinballSwitch sw_release_rocket = PinballSwitch(release_rocket);
 
 //define direct switches
 PinballSwitch test_sw = PinballSwitch(1, test);
-//PinballSwitch test_sw3 = PinballSwitch(2, test3);
-//PinballSwitch test_sw4 = PinballSwitch(5, test4);
-//PinballSwitch test_sw2 = PinballSwitch(6, test4);
+PinballSwitch test_sw2 = PinballSwitch(2, game_status);
 PinballSwitch sw_left_flipper = PinballSwitch(3, left_flipper_cancel, left_flipper); //active low
 PinballSwitch sw_right_flipper = PinballSwitch(4, right_flipper_cancel, right_flipper); //active low
 //-----------------------------------------------
 
-void test2()
-{
-    Serial.println(F("Switch 2"));
-}
 
-void test3()
-{
-    Serial.println(F("Switch 3"));
-}
-
-void test4()
-{
-    Serial.println(F("Switch 4"));
-}
 
 //-------------------------------------------------------
 //methods
@@ -144,6 +129,7 @@ void test4()
 void setup_switches()
 {
     switch_matrix.setDebounceTime(3);
+    //switch_matrix.setHoldTime(500);
     switch_matrix.addEventListener(switchEvent);
     Serial.println(F("Switch Matrix Setup"));
 }
@@ -308,7 +294,7 @@ void switchEvent(KeypadEvent key)
                 sw_spot_blast.read(switch_state);
                 return;
             case 57:
-                sw_ball_launch.read(switch_state);
+                sw_ball_launch.readHold(switch_state);
                 return;
             case 58:
                 sw_release_rocket.read(switch_state);
@@ -326,10 +312,9 @@ void check_switches()
 
 void read_direct_switches()
 {
-    test_sw.read();
-    //test_sw2.read();
-    //test_sw3.read();
-    //test_sw4.read();
+    // Only allow test mode to start if game is not running.
+    if (game_started) test_sw.read();
+    test_sw2.read();
     if (num_of_players > 0 || test_active) //only check these switches during active game play or during test mode
     {
         sw_left_flipper.read();

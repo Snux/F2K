@@ -45,16 +45,7 @@ static boolean ball_travelling = false; // Is the walker currently travelling th
 static long ball_walker_fired;
 static boolean multiball_in_progress = false;
 
-// This variable controls how far we are progressed toward multiball
-// 0 = no progress (initial state)
-// 1 = Apollo 1 lit - by shooting a ball into the lock
-// 2 = Apollo 1 and 2 lit - by shooting another into the lock
-// 3 = Lite all systems go - Apollo 1 and 2 lit, and blastoff completed
-// 4 = Multiball ready - lite all systems go complete and 54321 targets completed.
-// 5 = Multiball launch in progress!!
-// 6 = Multiball running
-static byte multiball_stage[max_players];
-static byte stage_lit[max_players];
+
 
 //----------------------------------------
 //methods
@@ -109,7 +100,7 @@ void left_kicker()
         {
             if (balls_in_walker > 0)
             {
-                walker_coil.pulse_delay(240,500,empty_routine);
+                walker_coil.pulse(240);
             }
             else
             {
@@ -176,8 +167,8 @@ void ball_launch()
     if (multiball_stage[active_player_id] <= 1)
     {
         multiball_stage[active_player_id]++;
-        if (multiball_stage[active_player_id] == 1) sound_channel1.play(346); // First stage stand by
-        else sound_channel1.play(347); // Second stage stand by
+        if (multiball_stage[active_player_id] == 1) sound_channel1.play(352); // First stage go
+        else sound_channel1.play(353); // Second stage go
         update_apollo_lamps();
     }
 
@@ -212,7 +203,7 @@ void ball_launch()
     }
     // Now we'll activate the walker mechanism.  If there were 3 balls in there, the bottom one 
     // should drop out and that will be picked up elsewhere
-    walker_coil.pulse_delay(240,500,empty_routine);
+    walker_coil.pulse(240);
 
 }
 

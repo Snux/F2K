@@ -10,15 +10,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Y:/Arduino-Pin/F2K15/mode_4b_right_drops.ino</file>
-            <file>file:/Y:/Arduino-Pin/F2K15/mode_10_ball_handler.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_91_tilt.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/mode_10_ball_handler.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_92_match.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/_8_switch_matrix.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/z_main.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/mode_9_game.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_4a_left_drops.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/F2K15.ino</file>
-            <file>file:/Y:/Arduino-Pin/F2K15/_7_devices_mechs.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/_6_EEPROM.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_2_locks.ino</file>
         </group>
     </open-files>

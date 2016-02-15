@@ -63,8 +63,8 @@ void right_flipper()
 {
     //Serial.println(F("Right Flipper"));
     //rotate_blastoff_right();
-    Serial.print(F("Free Ram:"));
-    Serial.println(freeRam());
+    //Serial.print(F("Free Ram:"));
+    //Serial.println(freeRam());
     if (test_active)
         test_right();
     else
