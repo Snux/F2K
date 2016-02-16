@@ -313,7 +313,7 @@ void check_switches()
 void read_direct_switches()
 {
     // Only allow test mode to start if game is not running.
-    if (game_started) test_sw.read();
+    if (!game_started) test_sw.read();
     test_sw2.read();
     if (num_of_players > 0 || test_active) //only check these switches during active game play or during test mode
     {

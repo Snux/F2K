@@ -62,7 +62,7 @@ void trough_switch_handler()
     // We only want to do something here if the game is actually in progress, otherwise we'll react to the initial read
     // of switch states at power on.
 
-    if (game_started)
+    if (game_started && ball_in_play)
     {
 
         // We really only want to do something if we've got more balls in the trough now than we had before
@@ -103,6 +103,7 @@ void trough_mech_handler(byte request)
     Serial.print(F("Trough handler: method called with param "));
     Serial.println(request, DEC); //debug
 
+    
     if (request == 0)
     {
         mhs_delay(1000);
