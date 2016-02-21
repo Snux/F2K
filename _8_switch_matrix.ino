@@ -26,6 +26,7 @@
 //define includes
 //----------------------------------------
 #include "PinballSwitch.h"
+#include "PinballDirectSwitch.h"
 #include "Keypad.h"
 //----------------------------------------
 
@@ -114,10 +115,10 @@ PinballSwitch sw_ball_launch = PinballSwitch(ball_launch);
 PinballSwitch sw_release_rocket = PinballSwitch(release_rocket);
 
 //define direct switches
-PinballSwitch test_sw = PinballSwitch(1, test);
-PinballSwitch test_sw2 = PinballSwitch(2, game_status);
-PinballSwitch sw_left_flipper = PinballSwitch(3, left_flipper_cancel, left_flipper); //active low
-PinballSwitch sw_right_flipper = PinballSwitch(4, right_flipper_cancel, right_flipper); //active low
+PinballDirectSwitch test_sw = PinballDirectSwitch(1, test);
+PinballDirectSwitch test_sw2 = PinballDirectSwitch(2, game_status);
+PinballDirectSwitch sw_left_flipper = PinballDirectSwitch(3, left_flipper_cancel, left_flipper); //active low
+PinballDirectSwitch sw_right_flipper = PinballDirectSwitch(4, right_flipper_cancel, right_flipper); //active low
 //-----------------------------------------------
 
 
