@@ -43,13 +43,18 @@ int freeRam() //outputs the amount of free sram in bytes
 // game information to the serial monitor for debugging.
 void game_status()
 {
-    Serial.print(F("Game Status     : balls in walker is "));Serial.println(balls_in_walker, DEC);
-    Serial.print(F("Game Status     : multiball stage is "));Serial.println(multiball_stage[active_player_id], DEC);
-    Serial.print(F("Game Status     : balls in trough is "));Serial.println(balls_in_trough());
-    Serial.print(F("Game Status     : stage lit is "));Serial.println(stage_lit[active_player_id], DEC);
-    Serial.print(F("Game Status     : extra ball count is "));Serial.println(extra_balls, DEC);
-    Serial.print(F("Game Status     : extra ball count is "));Serial.println(extra_balls, DEC);
-    Serial.print(F("Game Status     : free memory is  "));Serial.println(freeRam());
+    Serial.print(F("Game Status     : balls in walker : "));Serial.println(balls_in_walker, DEC);
+    Serial.print(F("Game Status     : multiball stage : "));Serial.println(multiball_stage[active_player_id], DEC);
+    Serial.print(F("Game Status     : balls in trough : "));Serial.println(balls_in_trough());
+    Serial.print(F("Game Status     : stage lit       : "));Serial.println(stage_lit[active_player_id], DEC);
+    Serial.print(F("Game Status     : blastoff count  : "));Serial.println(blastoff_count[active_player_id], DEC);
+    Serial.print(F("Game Status     : extra balls     : "));Serial.println(extra_balls, DEC);
+    Serial.print(F("Game Status     : free memory     : "));Serial.println(freeRam());
+    Serial.print(F("Game Status     : ball save       : "));
+    if (ball_save_enabled) 
+        Serial.println(F("enabled"));
+    else
+        Serial.println(F("disabled"));
     //Serial.print(F("Free Ram:"));
     //Serial.println(freeRam());
 }
