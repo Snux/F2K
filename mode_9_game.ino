@@ -79,6 +79,7 @@ void start_game()
             next_left_drop[num_of_players - 1] = 5;
             stage_lit[num_of_players - 1] = 0;
             multiball_stage[num_of_players - 1] = 0;
+            bonus_mult[num_of_players - 1] = 1;
             clear_blastoff(num_of_players - 1);
             blastoff_completed[num_of_players - 1] = false;
 
@@ -175,20 +176,15 @@ void start_ball()
     Serial.println(active_player_id, DEC);
     Serial.print(F("Ball Start  1   : Number of players is  "));
     Serial.println(num_of_players, DEC);
-    trough_mech_handler(0); // Start ball
+    
     right_drop_target_reset();
     //  Reset the left bank, using a parm of true will force the bank to reset
     left_drop_target_reset(true);
 
 
     right_spinner_value[active_player_id] = 500;
-    bonus_mult[active_player_id] = 1;
+    
     bonus_count[active_player_id] = 0;
-
-    //flash current players score
-    flash_display(active_player_id);
-    //update bip to display
-    update_credit_display();
 
     ball_in_play = true;
     Serial.print(F("Ball started, Player:"));
@@ -210,13 +206,24 @@ void start_ball()
     update_bonus_mult_lamps(bonus_mult[active_player_id]);
     update_bonus_lamps(bonus_count[active_player_id]);
     update_apollo_lamps();
-    /* update_kickback_lamps();
-     update_saucer_lamps();
-     update_ramp_lamps();
-     update_bonus_lamps();
-     */
+    
     //turn on ball in play lamp
     lamp_match.on(0);
+    
+    // If this is the last ball for the player, briefly display the high score on all the displays
+    if (ball_num[active_player_id] == balls_per_game)
+    {
+        show_high_scores(high_score);
+        delay(2000);
+        update_display();
+    }
+    
+    //flash current players score
+    flash_display(active_player_id);
+    //update bip to display
+    update_credit_display();
+
+    trough_mech_handler(0); // Start ball
 
 }
 

@@ -12,14 +12,18 @@
         <group>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_91_tilt.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_10_ball_handler.ino</file>
-            <file>file:/Y:/Arduino-Pin/F2K15/mode_92_match.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/_8_switch_matrix.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/z_main.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_9_game.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_4a_left_drops.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/F2K15.ino</file>
-            <file>file:/Y:/Arduino-Pin/F2K15/_6_EEPROM.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/_7_devices_mechs.ino</file>
             <file>file:/Y:/Arduino-Pin/F2K15/mode_2_locks.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/mode_5_spinners.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/_mode_0_test.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/mode_92_match.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/_6_EEPROM.ino</file>
+            <file>file:/Y:/Arduino-Pin/F2K15/_9_utilities.ino</file>
         </group>
     </open-files>
 </project-private>
