@@ -186,7 +186,7 @@ void start_ball()
     
     bonus_count[active_player_id] = 0;
 
-    ball_in_play = true;
+    
     Serial.print(F("Ball started, Player:"));
     Serial.print(String(active_player_id));
     Serial.print(F(", Ball in play:"));
@@ -210,20 +210,26 @@ void start_ball()
     //turn on ball in play lamp
     lamp_match.on(0);
     
+    trough_mech_handler(0); // Start ball
+    
     // If this is the last ball for the player, briefly display the high score on all the displays
     if (ball_num[active_player_id] == balls_per_game)
     {
         show_high_scores(high_score);
-        delay(2000);
+        mhs_delay(2000);
         update_display();
     }
+    
+    
+    ball_in_play = true;
     
     //flash current players score
     flash_display(active_player_id);
     //update bip to display
     update_credit_display();
 
-    trough_mech_handler(0); // Start ball
+    
+    
 
 }
 

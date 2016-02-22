@@ -33,34 +33,23 @@
 //----------------------------------------
 //define global variables
 //----------------------------------------
-const byte sw_rows = 8;
+const byte sw_rows = 5;
 const byte sw_cols = 8;
 const char switches[sw_rows][sw_cols] = {
     {11, 12, 13, 14, 15, 16, 17, 18},
     {21, 22, 23, 24, 25, 26, 27, 28},
     {31, 32, 33, 34, 35, 36, 37, 38},
     {41, 42, 43, 44, 45, 46, 47, 48},
-    {51, 52, 53, 54, 55, 56, 57, 58},
-    {61, 62, 63, 64, 65, 66, 67, 68},
-    {71, 72, 73, 74, 75, 76, 77, 78},
-    {81, 82, 83, 84, 85, 86, 87, 88}
+    {51, 52, 53, 54, 55, 56, 57, 58}
+    //{61, 62, 63, 64, 65, 66, 67, 68},
+    //{71, 72, 73, 74, 75, 76, 77, 78},
+    //{81, 82, 83, 84, 85, 86, 87, 88}
 };
 
-/*
-String switch_descriptions[sw_rows][sw_cols]={
-{"Drop Target E","Drop Target D","Drop Target C","Drop Target B","Drop Target A","Start Button","Tilt","Outhole"},
-{"Coin 3","Coin 1","Coin 2","Top Rollover Button","Drop Target Rebound","Right Outlane","Left Outlane","Sam Tilt"},
-{"Spinner","5 Target","4 Target","3 Target","2 Target","1 Target","Lite Feeder Lanes","Saucer"},
-{"","5 Star","4 Star","3 Star","2 Star","1 Star","Right Slingshot","Left Slingshot"},
-{"Bottom Bumper","5 Left Rollover","4 Left Rollover","3 Left Rollover","2 Left Rollover","1 Left Rollover","Right Bumper","Left Bumper"},
-{"Left Flipper","Right Flipper","","","","","",""},
-{"","","","","","","",""},
-{"","","","","","","",""},
-};
- */
+
 
 byte switch_num = 1;
-byte row_pins[sw_rows] = {22, 24, 26, 28, 30, 32, 34, 36}; //connect to the row pinouts of the switch matrix
+byte row_pins[sw_rows] = {22, 24, 26, 28, 30};//, 32, 34, 36}; //connect to the row pinouts of the switch matrix
 byte col_pins[sw_cols] = {23, 25, 27, 29, 31, 33, 35, 37}; //connect to the column pinouts of the switch matrix
 
 Keypad switch_matrix = Keypad(makeKeymap(switches), row_pins, col_pins, sw_rows, sw_cols);
@@ -145,17 +134,7 @@ void switchEvent(KeypadEvent key)
     byte key_id = switch_matrix.findInList(key); //find the key in the list and get the id
     byte switch_state = switch_matrix.key[key_id].kstate; //switch_matrix.getState();
 
-    //byte row = (key / 10) - 1;
-    //byte col = (key % 10) - 1;
-    /*
-      Serial.print(F("Key Pressed:"));
-      Serial.print(F("Key: S")); Serial.print(key, DEC);
-      Serial.print(F("  key_id: ")); Serial.print(key_id, DEC);
-      //Serial.print(F(" "));
-      //Serial.print(F("Name:"));Serial.print(switch_descriptions[row][col]);
-      Serial.print(F(" "));
-      Serial.print(F("State:")); Serial.println(switch_state);
-     */
+    
 
     // If the ball search is active, then we only want to respond to the top kicker switches
     // and the trough switches; everything else can be ignored
